@@ -27,6 +27,9 @@ namespace Svg2Stl
 
         [Option(Default = 10, HelpText = "How many segments to use when generating points for curved paths. Higher = smoother curves.")]
         public double CurveSteps { get; set; }
+
+        [Option(Default = 1.6, HelpText = "The thickness of the generated model (in millimeters).")]
+        public double Thickness { get; set; }
     }
 
     class Program
@@ -75,7 +78,7 @@ namespace Svg2Stl
                 scad.AppendLine(sr.ReadToEnd());
             }
 
-            scad.AppendLine(@$"scale([{scale}, {scale}, 1]) {{ linear_extrude(height = 1.6, center = false) {{ difference() {{");
+            scad.AppendLine(@$"scale([{scale}, {scale}, 1]) {{ linear_extrude(height = {options.Thickness}, center = false) {{ difference() {{");
 
             foreach (var e in svg.Descendants())
             {
