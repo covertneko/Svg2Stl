@@ -4,7 +4,8 @@ workflow of creating front panels for various electronics projects (e.g. synth m
 I have no idea if it will work for anything other than my specific use case.
 
 ## Usage
-OpenSCAD is required to convert the generated scad script to an actual model.
+[OpenSCAD](https://www.openscad.org) must be installed and in your `PATH` to convert the generated
+scad script to an actual model.
 
 Otherwise, just run `svg2stl input.svg output.stl`.
 
