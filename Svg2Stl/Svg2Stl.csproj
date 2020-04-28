@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Version>0.1.0</Version>
+    <Company />
+    <Authors>Erin Winkelmann</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="lib.scad" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="lib.scad" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CliWrap" Version="3.0.0" />
+    <PackageReference Include="CommandLineParser" Version="2.7.82" />
+    <PackageReference Include="Svg" Version="3.0.102" />
+  </ItemGroup>
+
+</Project>
